@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="campaign">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Model.Content.Name</title>
+    <link href="/css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>@Model.Content.Name</h1>
+    <a href="/">Back to front</a><br />
+    @Model.Content.GetPropertyValue("body")
+</body>
+</html>

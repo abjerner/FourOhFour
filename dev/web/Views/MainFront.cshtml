@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Model.Content.Name</title>
+    <link href="/css/styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <h1>@Model.Content.Name</h1>
+    <strong>Pages</strong><br />
+    <ul>
+        @foreach (var page in Model.Content.Parent.Children.Where(x => x.IsVisible())) {
+            <li>
+                <a href="@page.Url">@page.Name</a>
+            </li>
+        }
+    </ul>
+</body>
+</html>
